@@ -1,23 +1,20 @@
-const professor = {};
-
-professor.name = "Prof Balaram";
-professor.age = 30;
-professor.height = 190;
-professor.degree = {
-  engineering: "CSC",
-  PHD: "Adv Computing",
-  MBA: "Adv in C",
+const professor = {
+  name: "Prof Balaram",
+  age: 30,
+  height: 190,
+  // degree: {
+  //   engineering: "CSC",
+  //   PHD: "Adv Computing",
+  //   MBA: "Adv in C",
+  // },
+  certificates: {
+    hackerRank: "2nd",
+    presentation: "3rd",
+    advProgramming: "1st",
+  },
+  add: function () {
+    return this.certificates.hackerRank + this.presentation;
+  },
 };
-
-professor.certificates = {
-  hackerRank: "2nd",
-  presentation: "3rd",
-  advProgramming: "1st",
-};
-
-let add = function () {
-  let concatCert = professor.degree.concat(professor.certificates);
-  console.log(concatCert);
-};
-professor.add();
-console.log(professor);
+const totalCertificates = professor.certificates.add();
+console.log(totalCertificates);

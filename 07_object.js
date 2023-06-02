@@ -68,6 +68,9 @@ const bhakt = {
     chanting: 16,
     bg: 700,
     sb: 18000,
+    qualification: function () {
+      return this.bg + this.chanting + this.sb;
+    },
   },
 };
 console.log(bhakt);
@@ -76,3 +79,40 @@ console.log(bhakt.spiritual.bg);
 
 bhakt.spiritual.bg = 18;
 console.log(bhakt.spiritual.bg);
+
+bhakt.spiritual.qualification();
+console.log(bhakt.spiritual.qualification());
+
+console.log(`Object Entries`);
+var lama = {
+  name: "MI",
+  age: "20",
+  surname: "Mumbai",
+};
+console.log(`=============in operator=============`);
+let isAvailable = "age" in lama; // all keys are available in string formate
+if (isAvailable) {
+  delete lama.age;
+  console.log(`"age" property deleted successfully.`);
+} else {
+  console.log(`"age" property not deleted as it is available inside object.`);
+}
+
+// console.log(`${Object.entries(lama)}`);
+// console.log(`${Object.keys(lama)}`);
+// console.log(`${Object.values(lama)}`);
+
+console.log(`==============for in loop==============`);
+var lama = {
+  name: "MI",
+  age: "20",
+  surname: "Mumbai",
+  company: "Museum",
+  evaluation: "2000B $",
+};
+for (const key in lama) {
+  if (Object.hasOwnProperty.call(lama, key)) {
+    const element = lama[key];
+    console.log(key, element);
+  }
+}
